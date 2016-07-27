@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BitAuto.Cdn.Interfaces</name>
+    </assembly>
+    <members>
+        <member name="F:BitAuto.Cdn.Interfaces.RefreshManager.cdnConfig">
+            <summary>
+            CDN配置
+            </summary>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.RefreshManager.#cctor">
+            <summary>
+            刷新接口,cdn_address是cdn.bitautotech.com,用户只需要向我们的网站提出Purge请求，我们的程序会向其他网站发送请求
+            </summary>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.RefreshManager.Refresh(System.String[],BitAuto.Cdn.Interfaces.UrlType)">
+            <summary>
+            批量删除url的缓存
+            </summary>
+            <param name="urls">链接数组</param>
+            <param name="type">链接类型</param>
+            <returns>删除是否成功</returns>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.RefreshManager.Refresh(System.Collections.Generic.IList{System.String},BitAuto.Cdn.Interfaces.UrlType)">
+            <summary>
+            批量删除url的缓存
+            </summary>
+            <param name="urls">链接列表</param>
+            <param name="type">链接类型</param>
+            <returns>删除是否成功</returns>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.RefreshManager.Refresh(System.String,BitAuto.Cdn.Interfaces.UrlType)">
+            <summary>
+            向本地的cdn管理平台发送刷新请求
+            </summary>
+            <param name="urls">
+            以换行符(\r\n)分割的链接字符串，
+            如果直接由文本框提交，直接复制即可
+            如果人为拼接，须将\r\n换为url编码后%0d%0a
+            如果只有一条，直接传入即可</param>
+            <param name="type">链接类型</param>
+            <returns></returns>
+        </member>
+        <member name="F:BitAuto.Cdn.Interfaces.UrlType.File">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="F:BitAuto.Cdn.Interfaces.UrlType.Directory">
+            <summary>
+            目录
+            </summary>
+        </member>
+        <member name="F:BitAuto.Cdn.Interfaces.TextLog.cdnConfig">
+            <summary>
+            CDN配置
+            </summary>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.TextLog.WriteLog(System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="F:BitAuto.Cdn.Interfaces.ChinaCacheVideoManager.cdnConfig">
+            <summary>
+            CDN配置
+            </summary>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.ChinaCacheVideoManager.Delete(System.String)">
+            <summary>
+            删除
+            </summary>       
+            <param name="publishPath">发布路径</param>
+            <returns>cc返回信息</returns>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.ChinaCacheVideoManager.Publish(System.String,System.String)">
+            <summary>
+            发布视频文件
+            </summary>
+            <param name="sourcePath">视频源路径</param>
+            <param name="publishPath">视频发布路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.ChinaCacheVideoManager.Rename(System.String,System.String)">
+            <summary>
+            重命名视频文件
+            </summary>
+            <param name="sourcePath">视频源路径</param>
+            <param name="publishPath">视频发布路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.ChinaCacheVideoManager.Check(System.String,System.String)">
+            <summary>
+            根据文件Md5值检查文件是否正确
+            </summary>       
+            <param name="sourcePath">视频源路径</param>
+            <param name="publishPath">视频发布路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.ChinaCacheVideoManager.Update(System.String,System.String)">
+            <summary>
+            更新视频
+            </summary>
+            <param name="sourcePath">视频源路径</param>
+            <param name="publishPath">视频发布路径</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:BitAuto.Cdn.Interfaces.ChinaCacheVideoManager.DoPost(System.String)">
+            <summary>
+            向本地的cdn管理平台发送刷新请求
+            </summary>
+            <param name="query">请求地址</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
