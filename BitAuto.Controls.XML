@@ -1,0 +1,1257 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BitAuto.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:BitAuto.Controls.CalendarPlan.DayDisplayParameter">
+            <summary>
+            本类封装某一天在日历中的显示参数
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.DayDisplayParameter.DisplayDate">
+            <summary>
+            显示日期
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.DayDisplayParameter.IsSelectable">
+            <summary>
+            是否可以选择(点击)
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.DayDisplayParameter.BackgroundColor">
+            <summary>
+            背景颜色
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.DayDisplayParameter.ForegroundColor">
+            <summary>
+            前景颜色
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.DayDisplayParameter.HintTextOnclick">
+            <summary>
+            点击时提示信息
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.CalendarPlan.SelectionChangedEventHandler">
+            <summary>
+            排期控件的事件处理代理
+            </summary>
+            <param name="selectedDate">用户点击的日期</param>
+            <param name="e"></param>
+        </member>
+        <member name="T:BitAuto.Controls.CalendarPlan.CalendarPlan">
+            <summary>
+            排期控件
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.CalendarPlan.CalendarPlan.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出排期控件
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="M:BitAuto.Controls.CalendarPlan.CalendarPlan.AppendDayDisplayParameters(System.Collections.Generic.List{BitAuto.Controls.CalendarPlan.DayDisplayParameter})">
+            <summary>
+            修改排期控件日期的显示参数，一般在本控件的SelectionChanged事件的处理方法中调用
+            </summary>
+            <param name="parameters">不能为空</param>
+        </member>
+        <member name="M:BitAuto.Controls.CalendarPlan.CalendarPlan.AppendDayDisplayParameter(BitAuto.Controls.CalendarPlan.DayDisplayParameter)">
+            <summary>
+            修改排期控件日期的显示参数，一般在本控件的SelectionChanged事件的处理方法中调用
+            </summary>
+            <param name="parameter">不能为空</param>
+        </member>
+        <member name="M:BitAuto.Controls.CalendarPlan.CalendarPlan.ClearCalendarPlanState">
+            <summary>
+            清除排期控件的状态，当使用排期控件的页面要关闭时应当调用本方法，
+            否则会造成内存泄漏。
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.MinDate">
+            <summary>
+            排期控件的最小日期，根据此日期计算起始月份
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.MaxDate">
+            <summary>
+            排期控件的最大日期，根据此日期计算最大月份
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.CalendarCountPerLine">
+            <summary>
+            每行显示的月数，缺省为4
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.PageSize">
+            <summary>
+            每页显示的月数，默认为6
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.VisibleDate">
+            <summary>
+            默认页显示的起始日期，默认为当前日期
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.DefaultDayDisplayParameter">
+            <summary>
+            缺省的工作日显示参数
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.DefaultWeekendDisplayParameter">
+            <summary>
+            缺省的周末显示参数,如果为空则使用DefaultDayDisplayParameter
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.DayDisplayParameters">
+            <summary>
+            定制的日显示参数
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.AspNetPager">
+            <summary>
+            分页控件，可以通过它修改分页属性
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.IsShowTopAspNetPager">
+            <summary>
+            是否显示顶部的分页控件，默认为true
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.CalendarPlan.CalendarPlan.IsShowBottomAspNetPager">
+            <summary>
+            是否显示底部的分页控件，默认为true
+            </summary>
+        </member>
+        <member name="E:BitAuto.Controls.CalendarPlan.CalendarPlan.DayRender">
+            <summary>
+            当显示某一日的单元格之前触发本事件
+            </summary>
+        </member>
+        <member name="E:BitAuto.Controls.CalendarPlan.CalendarPlan.SelectionChanged">
+            <summary>
+            当在排期控件中点击一个日期时触发本时间
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.GroupList.GroupListItem">
+            <summary>
+            子项
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupListItem.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupListItem.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="text">子项文本</param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupListItem.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="text">子项文本</param>
+            <param name="value">子项数值</param>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupListItem.Text">
+            <summary>
+            子项文本
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupListItem.Value">
+            <summary>
+            子项数值
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupListItem.Selected">
+            <summary>
+            是否被选中
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.DateTime.TimePicker">
+            <summary>
+            时间控件
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.DateTime.TimePicker.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.DateTime.TimePicker.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出内容
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="M:BitAuto.Controls.DateTime.TimePicker.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            加载提交的数据
+            </summary>
+            <param name="postDataKey"></param>
+            <param name="postCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.DateTime.TimePicker.RaisePostDataChangedEvent">
+            <summary>
+            提交数据后产生事件
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.DateTime.TimePicker.OnTextChanged(System.EventArgs)">
+            <summary>
+            产生文本改变事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:BitAuto.Controls.DateTime.TimePicker.OnPreRender(System.EventArgs)">
+            <summary>
+            输出内容之前处理数据
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:BitAuto.Controls.DateTime.TimePicker.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            给内容添加属性
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="E:BitAuto.Controls.DateTime.TimePicker.TextChanged">
+            <summary>
+            文本改变事件
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.DateTime.TimePicker.Text">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.NumericTextBox">
+            <summary>
+            集成验证功能的数字类型文本框控件,作者:李秋楠
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.CssClass">
+            <summary>
+            文本框的样式
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.Display">
+            <summary>
+            验证程序的显示方式
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.MaxLength">
+            <summary>
+            文本框可输入的最大字符数
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.ReadOnly">
+            <summary>
+            文本框是否只读
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.Text">
+            <summary>
+            文本框的文本
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.ValidationGroup">
+            <summary>
+            验证程序所属的组
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.Width">
+            <summary>
+            文本框的宽度
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.EnabledRequiredValidation">
+            <summary>
+            是否启用非空验证
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.RequiredErrorMessage">
+            <summary>
+            非空验证的错误信息
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.NumberType">
+            <summary>
+            要进行验证的数据类型
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.TypeErrorMessage">
+            <summary>
+            类型验证的错误信息
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.EnabledRangeValidation">
+            <summary>
+            是否启用范围验证
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.RangeErrorMessage">
+            <summary>
+            范围验证的错误信息
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.MaximumValue">
+            <summary>
+            所验证控件的最大值
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.NumericTextBox.MinimumValue">
+            <summary>
+            所验证控件的最小值
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.NumericTextBox.eNumberType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.NumericTextBox.eNumberType.Integer">
+            <summary>
+            整数
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.NumericTextBox.eNumberType.Double">
+            <summary>
+            双精度浮点数
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.NumericTextBox.eNumberType.Currency">
+            <summary>
+            数字
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.MarqueePanel">
+            <summary>
+            可以实现连续无缝滚动效果的容器控件,作者:李秋楠
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.MarqueePanel.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            输出内容
+            </summary>
+            <param name="output"></param>
+        </member>
+        <member name="P:BitAuto.Controls.MarqueePanel.InnerHtml">
+            <summary>
+            需要滚动显示的HTML内容
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.MarqueePanel.Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.MarqueePanel.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.MarqueePanel.Speed">
+            <summary>
+            滚动速度
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.MarqueePanel.MarqueeDirection">
+            <summary>
+            滚动方向
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.eMarqueeDerection">
+            <summary>
+            滚动方向
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eMarqueeDerection.Up">
+            <summary>
+            向上
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eMarqueeDerection.Down">
+            <summary>
+            向下
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eMarqueeDerection.Left">
+            <summary>
+            向左
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eMarqueeDerection.Right">
+            <summary>
+            向右
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.GroupList.GroupItem">
+            <summary>
+            组
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItem.System#Web#UI#IStateManager#TrackViewState">
+             <summary>
+            提取ViewState 
+             </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItem.System#Web#UI#IStateManager#SaveViewState">
+            <summary>
+            保存ViewState
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItem.System#Web#UI#IStateManager#LoadViewState(System.Object)">
+            <summary>
+            加载ViewState
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupItem.Label">
+            <summary>
+            组的名称
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupItem.Items">
+            <summary>
+            组中的子项
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.DateTime.Calendar">
+            <summary>
+            日历控件
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.DateTime.Calendar.OnPreRender(System.EventArgs)">
+            <summary>
+            将此控件呈现给指定的输出参数。
+            </summary>
+            <param name="output"> 要写出到的 HTML 编写器 </param>
+        </member>
+        <member name="P:BitAuto.Controls.DateTime.Calendar.IsWrite">
+            <summary>
+            是否可以写入日期
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.GroupList.GroupListItemCollection">
+            <summary>
+            子项集合
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.GroupList.DataSourceHelper">
+            <summary>
+            处理数据源的工具类
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.DataSourceHelper.GetResolvedDataSource(System.Object,System.String)">
+            <summary>
+            获取分解后的数据源
+            </summary>
+            <param name="dataSource">数据源</param>
+            <param name="dataMember">数据源中用于绑定的成员的关键字</param>
+            <returns>获取解析后可拱绑定的数据源</returns>
+        </member>
+        <member name="T:BitAuto.Controls.GroupList.GroupListDesigner">
+            <summary>
+            GroupList控件设计器
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupListDesigner.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupListDesigner.GetDesignTimeHtml">
+            <summary>
+            获取设计时html
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.CssClass">
+            <summary>
+            文本框的样式
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.Display">
+            <summary>
+            验证程序的显示方式
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.Height">
+            <summary>
+            文本框的高度
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.ReadOnly">
+            <summary>
+            文本框是否只读
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.Text">
+            <summary>
+            文本框的文本
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.ValidationGroup">
+            <summary>
+            验证程序所属的组
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.TextMode">
+            <summary>
+            文本框的行为模式
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.Width">
+            <summary>
+            文本框的宽度
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.EnabledRequiredValidation">
+            <summary>
+            是否启用非空验证
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.RequiredErrorMessage">
+            <summary>
+            非空验证的错误信息
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.DataType">
+            <summary>
+            字段的数据类型
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.LengthErrorMessage">
+            <summary>
+            长度验证的错误信息
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.MaxLength">
+            <summary>
+            文本框可输入的最大字符数
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.EnabledRegularExpressionValidation">
+            <summary>
+            是否启用正则表达式验证
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.RegularExpressionErrorMessage">
+            <summary>
+            正则表达式验证的错误信息
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.ValidationExpression">
+            <summary>
+            用于确定有效性的正则表达式
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.StringTextBox.RegularExpressionType">
+            <summary>
+            正则表达式验证类型
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.eDataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.eRegularExpressionType">
+            <summary>
+            正则表达式类型
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eRegularExpressionType.Custom">
+            <summary>
+            一般文字
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eRegularExpressionType.TelephoneNumber">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eRegularExpressionType.MobilePhoneNumber">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eRegularExpressionType.TelephoneOrMobilePhoneNumber">
+            <summary>
+            电话号码或手机号码
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eRegularExpressionType.IDCard">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eRegularExpressionType.PostCode">
+            <summary>
+            邮编
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eRegularExpressionType.Email">
+            <summary>
+            电子邮件
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.eRegularExpressionType.ChineseOnly">
+            <summary>
+            中文字符
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.GroupList.GroupList">
+            <summary>
+            分组下拉列表控件
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.ClearSelection">
+            <summary>
+            清除当前选择项
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.FindByText(System.String)">
+            <summary>
+            根据文本查询项目
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.FindByValue(System.String)">
+            <summary>
+            根据数值查询项目
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.TrackViewState">
+            <summary>
+            提取ViewState
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.SaveViewState">
+            <summary>
+            保存ViewState
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.LoadViewState(System.Object)">
+            <summary>
+            加载ViewState
+            </summary>
+            <param name="savedState"></param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.OnSelectedIndexChanged(System.EventArgs)">
+            <summary>
+            选择项改变事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.OnDataBinding(System.EventArgs)">
+            <summary>
+            数据绑定事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.RaisePostDataChangedEvent">
+            <summary>
+            提交后产生事件
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupList.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            加载提交的数据
+            </summary>
+            <param name="postDataKey"></param>
+            <param name="postCollection"></param>
+            <returns></returns>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.SelectedIndex">
+            <summary>
+            当前选中项目的索引值
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.SelectedItem">
+            <summary>
+            当前选中项目
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.GroupItems">
+            <summary>
+            数值项集合
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.GroupListItemCount">
+            <summary>
+            数值项数量
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.AutoPostBack">
+            <summary>
+            是否自动提交
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.DataMember">
+            <summary>
+            用于绑定时，数据源集合中的关键字。例如DataSet中的表名。
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.DataSource">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.DataGroupField">
+            <summary>
+            分组字段
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.DataTextField">
+            <summary>
+            文本字段
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupList.DataValueField">
+            <summary>
+            数值字段
+            </summary>
+        </member>
+        <member name="T:BitAuto.Controls.Pager">
+            <summary>
+      分页控件
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager._firstPageTextValue">
+            <summary>
+            首页显示的文本值
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager._lastPageTextValue">
+            <summary>
+            尾页显示的文本值
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager._previousTextValue">
+            <summary>
+            前一页按钮显示文字
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager._nextTextValue">
+            <summary>
+            后一页按钮显示文字
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager._nextClassName">
+            <summary>
+            下一页的ClassName
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager._previewClassName">
+            <summary>
+            前一页的ClassName
+            </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager._currentPageClassName">
+            <summary>
+            当前选择页ClassName
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      渲染控件内容
+    </summary><param name="writer"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.GetPaginationHtml">
+            <summary>
+      获取控件Html内容
+    </summary>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderPageNoBlock(System.Int32,System.Web.UI.HtmlTextWriter)">
+            <summary>
+      输出页码块
+    </summary><param name="no">页码</param><param name="writer">writer</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderStartPageNoBlock(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      首页
+    </summary><param name="writer"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderEndPageNoBlock(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      尾页
+    </summary><param name="writer"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderDotBlock(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      输出页码省略号
+    </summary><param name="writer">writer</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderPreDotBlock(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      输出左侧页码省略号
+    </summary><param name="writer">writer</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderPostDotBlock(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      输出右侧页码省略号
+    </summary><param name="writer">writer</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderPageMiddleBlock(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      输出中间段的页码
+    </summary><param name="writer">writer</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderPrevPageBlock(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      输出上一页
+    </summary><param name="writer">writer</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.GetHref(System.Int32,System.String)">
+            <summary>
+      获取Href
+    </summary><param name="pageIndex">页码</param><param name="urlRewritePattern"></param><exception cref="F:BitAuto.Controls.Pager.HrefPatternMode.String">HrefPattern为String时,必须设置UrlRewritePattern属性,否则会触发异常</exception><exception cref="F:BitAuto.Controls.Pager.HrefPatternMode.Delegate">HrefPattern为Delegate时,必须设置GetUrlEvent事件,否则会触发异常</exception><returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderNextPageBlock(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      输出下一页
+    </summary><param name="writer">writer</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.GetPageDivCSS">
+            <summary>
+      由外部配置文件获取PageDivCSS
+    </summary><returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.GetPageNoEllipsisTag(System.String)">
+            <summary>
+      获取外部配置文件中的页码省略号标签
+    </summary><param name="defaultEllipsis"></param><returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.GetSuffixHtml">
+            <summary>
+      根据外部配置文件的配置，获取后缀Html
+    </summary><returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.GetConfigValue(System.String,System.String)">
+            <summary>
+      获取外部配置文件中某一节点的值
+    </summary><param name="defaultValue"></param><param name="nodeName"></param><returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.IsExistsCofigFile">
+            <summary>
+      外部配置文件是否存在
+    </summary><returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.NoEllipsisInHead(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+      页码在前-没有页码省略号（首页、尾页）
+    </summary><param name="writer"></param><param name="showIndex"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.NoEllipsisInMiddle(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+      页码在中间-没有页码省略号（首页、尾页）
+    </summary><param name="writer"></param><param name="showIndex"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.NoEllipsisInTail(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+      页码在尾-没有页码省略号（首页、尾页）
+    </summary><param name="writer"></param><param name="showIndex"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RenderQueryString(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      分页主方法,生成Pager的Html
+    </summary><param name="writer">writer</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.HaveEllipsisInTail(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+      页码在尾-有页码省略号
+    </summary><param name="writer"></param><param name="showIndex"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.HaveEllipsisInMiddle(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+      页码在中间-有页码省略号
+    </summary><param name="writer"></param><param name="showIndex"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.HaveEllipsisInHead(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+      页码在前-有页码省略号
+    </summary><param name="writer"></param><param name="showIndex"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.RaisePostBackEvent(System.String)">
+            <summary>
+      触发页码Changing事件
+    </summary><param name="args">args</param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.OnPageChanging(System.Object,BitAuto.Controls.PageChangingEventArgs)">
+            <summary>
+      页码变化时触发
+    </summary><param name="obj"></param><param name="e"></param>
+        </member>
+        <member name="M:BitAuto.Controls.Pager.OnPageChanged(System.EventArgs)">
+            <summary>
+      页码变化后触发
+    </summary><param name="e"></param>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.HrefPattern">
+            <summary>
+      地址提供方式。默认string方式
+    </summary>
+        </member>
+        <member name="E:BitAuto.Controls.Pager.GetUrlEvent">
+            <summary>
+      获取链接事件
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.DotShowLimit">
+            <summary>
+      页码省略号显示界限，默认10；此值不能小于3
+    </summary><exception cref="P:BitAuto.Controls.Pager.DotShowLimit">此值不能小于3,否则会触发异常“试图除以零”</exception>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.PageDivCSS">
+            <summary>
+      分页容器DIV样式(默认:the_pages)
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.RecordCount">
+            <summary>
+      总条目数目
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.PageSize">
+            <summary>
+      每页条目数目
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.NolinkTag">
+            <summary>  
+            标签的类型  
+            </summary>  
+        </member>
+        <member name="P:BitAuto.Controls.Pager.LinkTag">
+            <summary>  
+            标签的类型  
+            </summary>  
+        </member>
+        <member name="P:BitAuto.Controls.Pager.CurrentPageIndex">
+            <summary>
+      页码
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.PageCount">
+            <summary>
+      总页数
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.DisplayTotalPageCount">
+            <summary>
+      显示总页数
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.UrlRewritePattern">
+            <summary>
+      地址模式
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.IsShowInput">
+            <summary>
+      是否显示输入框
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.IsShowPreNext">
+            <summary>
+      是否显示上下页
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.Mode">
+            <summary>
+      页码改变模式。默认Url请求方式
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.SuffixPattern">
+            <summary>
+      是否使用Goto样式
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.ExternalConfigPattern">
+            <summary>
+      是否使用外部配置文件设置部分属性
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.ExternalConfigURL">
+            <summary>
+      分页控件外部配置文件的地址
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.IsShowStartAndEndPageNo">
+            <summary>
+      是否显示‘首页、尾页’。
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.Pager.IsShowEllipsisInStartAndEnd">
+            <summary>
+      在显示‘首页、尾页’时是否显示页码省略号。默认为True，表示在显示‘首页、尾页’时继续显示页码省略号
+    </summary>
+        </member>
+        <member name="E:BitAuto.Controls.Pager.PageChanging">
+            <summary>
+      PostBack方式分页时，当页导航元素之一被单击或用户手工输入页索引提交时发生
+    </summary><summary>
+      页码变化时触发的事件
+    </summary>
+        </member>
+        <member name="E:BitAuto.Controls.Pager.PageChanged">
+            <summary>
+      PostBack方式分页时，当页导航元素之一被单击或用户手工输入页索引提交完成时发生
+    </summary>
+        </member>
+        <member name="T:BitAuto.Controls.Pager.HrefPatternMode">
+            <summary>
+      地址提供方式。
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager.HrefPatternMode.String">
+            <summary>
+      string方式。
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager.HrefPatternMode.Delegate">
+            <summary>
+      委托方式。
+    </summary>
+        </member>
+        <member name="T:BitAuto.Controls.Pager.GetUrlDelegate">
+            <summary>
+      以委托方式获取链接地址
+    </summary><param name="pageIndex"></param><returns>string</returns>
+        </member>
+        <member name="T:BitAuto.Controls.Pager.PagerSuffixPattern">
+            <summary>
+      分页控件后缀样式。
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager.PagerSuffixPattern.None">
+            <summary>
+      默认值,什么都没有
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager.PagerSuffixPattern.GoTo">
+            <summary>
+      跳转到指定页
+    </summary>
+        </member>
+        <member name="T:BitAuto.Controls.Pager.PageChangeMode">
+            <summary>
+      页码改变模式。
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager.PageChangeMode.Url">
+            <summary>
+      url请求方式。
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager.PageChangeMode.PostBack">
+            <summary>
+      postback事件方式。
+    </summary>
+        </member>
+        <member name="T:BitAuto.Controls.Pager.PagerExternalConfigPattern">
+            <summary>
+      外部配置文件使用模式。
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager.PagerExternalConfigPattern.None">
+            <summary>
+      默认值,什么都没有
+    </summary>
+        </member>
+        <member name="F:BitAuto.Controls.Pager.PagerExternalConfigPattern.Apply">
+            <summary>
+      应用外部配置文件。选择此项时，ExternalConfigURL为必填项！
+    </summary>
+        </member>
+        <member name="T:BitAuto.Controls.Pager.PageChangingEventHandler">
+            <summary>
+      页码变化时触发
+    </summary><param name="src"></param><param name="e"></param>
+        </member>
+        <member name="T:BitAuto.Controls.PagerItem">
+            <summary>
+      分页项
+    </summary>
+        </member>
+        <member name="M:BitAuto.Controls.PagerItem.AppendTo(System.Web.UI.HtmlTextWriter)">
+            <summary>
+      输出
+    </summary><param name="writer"></param>
+        </member>
+        <member name="P:BitAuto.Controls.PagerItem.Text">
+            <summary>
+      显示文字
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.PagerItem.ClassName">
+            <summary>
+      class属性
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.PagerItem.Href">
+            <summary>
+      href
+    </summary>
+        </member>
+        <member name="T:BitAuto.Controls.PageChangingEventArgs">
+            <summary>
+      分页事件参数类
+    </summary>
+        </member>
+        <member name="P:BitAuto.Controls.PageChangingEventArgs.NewPageIndex">
+            <summary>
+      新的页码
+    </summary>
+        </member>
+        <member name="T:BitAuto.Controls.GroupList.GroupItemCollection">
+            <summary>
+            组集合
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.Add(System.String)">
+            <summary>
+            添加组
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.Add(BitAuto.Controls.GroupList.GroupItem)">
+            <summary>
+            添加组
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.AddRange(BitAuto.Controls.GroupList.GroupItem[])">
+            <summary>
+            批量添加组
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.Clear">
+            <summary>
+            清除
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.Contains(BitAuto.Controls.GroupList.GroupItem)">
+            <summary>
+            查询组集合中是否包含一个组
+            </summary>
+            <param name="item">组</param>
+            <returns>是否包含</returns>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+            拷贝组集合一个范围内的数据到数组
+            </summary>
+            <param name="array">数组</param>
+            <param name="index">起始索引</param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.IndexOf(BitAuto.Controls.GroupList.GroupItem)">
+            <summary>
+            查询索引值
+            </summary>
+            <param name="item">组</param>
+            <returns>索引值</returns>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.Insert(System.Int32,System.String)">
+            <summary>
+            在组集合的某个索引位置插入个组数据
+            </summary>
+            <param name="index">索引值</param>
+            <param name="item">组</param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.Insert(System.Int32,BitAuto.Controls.GroupList.GroupItem)">
+            <summary>
+            在组集合的某个索引位置插入个组数据
+            </summary>
+            <param name="index">索引值</param>
+            <param name="item">组</param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.Remove(System.String)">
+            <summary>
+            删除一个组
+            </summary>
+            <param name="item">组数值</param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.Remove(BitAuto.Controls.GroupList.GroupItem)">
+            <summary>
+            删除一个组
+            </summary>
+            <param name="item">组</param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.RemoveAt(System.Int32)">
+            <summary>
+            删除一个组
+            </summary>
+            <param name="index">组索引</param>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.FindByText(System.String)">
+            <summary>
+            根据组的名称查询组索引值
+            </summary>
+            <param name="text">组的名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.TrackViewState">
+            <summary>
+            解析ViewState
+            </summary>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.SaveViewState">
+            <summary>
+            保存ViewState
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BitAuto.Controls.GroupList.GroupItemCollection.LoadViewState(System.Object)">
+            <summary>
+            加载ViewState
+            </summary>
+            <param name="state"></param>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupItemCollection.Capacity">
+            <summary>
+            组集合可以包含的容量
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupItemCollection.Count">
+            <summary>
+            组集合实际长度
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupItemCollection.IsReadOnly">
+            <summary>
+            是否只读
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupItemCollection.IsSynchronized">
+            <summary>
+            是否已同步
+            </summary>
+        </member>
+        <member name="P:BitAuto.Controls.GroupList.GroupItemCollection.Item(System.Int32)">
+            <summary>
+            组集合中的组数据
+            </summary>
+            <param name="index">索引</param>
+            <returns>组数据</returns>
+        </member>
+        <member name="T:BitAuto.Controls.CtrlEnterButton">
+            <summary>
+            按Ctrl和Enter键可以触发点击事件的按钮控件,作者:李秋楠
+            </summary>
+        </member>
+    </members>
+</doc>
